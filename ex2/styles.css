@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-family: 'Public Sans', sans-serif;
+    /* 
+        - Weights: 300, 400, 700 
+        - Mobile: 375px
+        - Desktop: 1440px
+    */
+}
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+:root{
+    --dark-blue: hsl(233, 26%, 24%);
+    --lime-green: hsl(136, 65%, 51%);
+    --bright-cyan: hsl(192, 70%, 51%);
+
+    --grayish-blue: hsl(233, 8%, 62%);
+    --light-grayish-blue: hsl(220, 16%, 96%);
+    --very-light-gray: hsl(0, 0%, 98%);
+    --white: hsl(0, 0%, 100%);
+}
+
+.nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 4em;
+    z-index: 1;
+    background: var(--white);
+    /* border: 2px solid red; */
+    /* font-size: 1vw; */
+}
+.nav-logo img{
+    padding: 0.5em;
+    cursor: pointer;
+}
+.nav-tabs{
+    /* border: 2px solid blue; */
+    height: 100%;
+    width: calc(30vw);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.nav-tabs .nav-btn{
+    color: var(--grayish-blue);
+    padding: 0.25em;
+    margin: 1em;
+    position: relative;
+    transition: color 150ms ease-in-out;
+}
+.nav-tabs .nav-btn:hover{
+    color: var(--dark-blue);
+}
+.nav-tabs .nav-btn::after{
+    content: '';
+    cursor: default;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: calc(-100% + 0.2em);
+    width: 100%;
+    background: black;
+    height: 0.4em;
+    background: linear-gradient(to right, var(--lime-green), var(--bright-cyan));
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+.nav-tabs .nav-btn:hover::after{
+    opacity: 100%;
+}
+.request-inv-btn .nav-btn{
+    padding: 1em 2em;
+    border-radius: 2em;
+    background: linear-gradient(to right, var(--lime-green), var(--bright-cyan));
+    color: var(--light-grayish-blue);
+    opacity: 100%;
+    transition: opacity 250ms ease-in-out;
+}
+.request-inv-btn .nav-btn:hover{
+    opacity: 60%;
+}
+.intro{
+    position: relative;
+}
+.intro-logo{
+    position: absolute;
+    /* z-index: -1; */
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    float: right;
+}
+/* 
+.content{
+    background: lightgrey;
+    width: 100%;
+    height: 100%;
+} */
